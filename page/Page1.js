@@ -1,10 +1,17 @@
-import React, { Component } from 'react'
-import {View} from 'react-native'
+import React from 'react';
+import { View, Text, Image, ScrollView, TextInput } from 'react-native';
 
-export class Page1 extends Component {
+export  default class Page1 extends React.Component {
     render() {
+        const {navigation} = this.props;
         return (
-            <View></View>
-        )
+            <ScrollView>
+                <Text onPress={()=>{
+                    navigation.navigate('Page2');
+                }} >Some text</Text>
+               
+            </ScrollView>
+        );
     }
 }
+
