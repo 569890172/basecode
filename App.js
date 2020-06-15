@@ -22,93 +22,47 @@ import {
   Colors,
   DebugInstructions,
   ReloadInstructions,
+
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+
+const HomeScreen = ()=>{
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+<View>
+  <Text>Home Screen </Text>
+</View>
   );
+}
+
+class App extends React.Component {
+  constructor() {
+    super();
+  };
+
+  render() {
+    return (
+      <View style={{backgroundColor:'darkgray',marginTop:64,flexDirection:'row',alignItems:'stretch',height:500}} >
+        <View style={{width:40,backgroundColor:'red',margin:5}} >
+          <Text>1</Text>
+        </View>
+        <View style={{width:40,height:40,backgroundColor:'red',margin:5,alignSelf:'flex-end'}} >
+          <Text>2</Text>
+        </View>
+        <View style={{width:40,backgroundColor:'red',margin:5}} >
+          <Text>3</Text>
+        </View>
+        <View style={{width:40,height:40,backgroundColor:'yellow',position:'absolute',left:100,top:-10}} >
+          <Text>4</Text>
+        </View>
+        
+      </View>
+    );
+  }
+
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+
 });
 
 export default App;
